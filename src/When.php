@@ -550,7 +550,8 @@ class When extends DateTime
             $thisClone->until = $endDate;
         }
 
-        $thisClone->generateOccurrences();
+        // if occurrences are already generated, don't generate new ones.
+        if (empty($thisClone->occurrences)) $thisClone->generateOccurrences();
         $all_occurrences = $thisClone->occurrences;
 
         // nothing found in $thisClone->generateOccurrences();
