@@ -619,9 +619,9 @@ class When extends DateTime
     {
         $rrule = [];
 
-        if (isset($this->startDate)) $rrule['DTSTART'] = $this->startDate->format('Ymd\THis\Z');
+        if (isset($this->startDate)) $rrule['DTSTART'] = $this->startDate->format('Ymd\THisO');
         if (isset($this->freq)) $rrule['FREQ'] = $this->freq;
-        if (isset($this->until)) $rrule['UNTIL'] = $this->until->format('Ymd\THis\Z');
+        if (isset($this->until)) $rrule['UNTIL'] = $this->until->format('Ymd\THisO');
         if (isset($this->count)) $rrule['COUNT'] = $this->count;
         if (isset($this->interval)) $rrule['INTERVAL'] = $this->interval;
         if (isset($this->bydays)) $rrule['BYDAY'] = implode(',', $this->bydays);
